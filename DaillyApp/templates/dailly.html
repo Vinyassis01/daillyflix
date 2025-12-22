@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Diário Multimídia - Estilo Netflix</title>
+    <link rel="stylesheet" href="{% static '/css/dailly.css' %}">
+    </head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <h1><span class="logo-text">Dailly</span> flix</h1>
+        </div>
+        <nav class="main-nav">
+            <a href="#inicio" class="active">Início</a>
+            <a href="#videos">Vídeos</a>
+            <a href="#fotos">Fotos</a>
+            <a href="#momentos">Momentos</a>
+            <a href="#perfil">Meu Perfil</a>
+        </nav>
+        <div class="user-actions">
+            <button class="icon-btn">🔍</button>
+            <button class="icon-btn">🔔</button>
+        </div>
+    </header>
+
+    <section class="main-feature">
+        <div class="feature-content">
+            <h2 class="feature-title">Dia Especial: Viagem à Montanha</h2>
+            <p class="feature-description">
+                Um resumo emocionante da minha última aventura. O sol estava radiante e a trilha foi desafiadora! (15/10/2025)
+            </p>
+            <div class="feature-actions">
+                <button class="play-btn">▶ Ver Vídeo</button>
+                <button class="info-btn">ℹ Mais Detalhes</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-row">
+        <h2>Meus Últimos Vídeos</h2>
+        <div class="row-posters">
+            <div class="poster-item">
+                <a href="#"><img src="media/048870d5-0a5a-4563-9068-0e0838e8f931.jpeg" alt="Vídeo 1 - Título" class="poster"></a>
+                <p class="poster-title">Churrasco com Amigos</p>
+            </div>
+            <div class="poster-item">
+                <a href="#"><img src="media/1235167.jpg" alt="Vídeo 2 - Título" class="poster"></a>
+                <p class="poster-title">Nova Receita Testada</p>
+            </div>
+            <div class="poster-item">
+                <a href="#"><img src="media/1387268.jpg" alt="Vídeo 3 - Título" class="poster"></a>
+                <p class="poster-title">Passeio de Bike</p>
+            </div>
+            </div>
+    </section>
+
+    <section class="content-row">
+        <h2>Fotos Inéditas - Semana Passada</h2>
+        <div class="row-posters">
+            <div class="poster-item">
+                <a href="#"><img src="caminho/para/foto1.jpg" alt="Foto 1 - Título" class="poster"></a>
+                <p class="poster-title">Por do Sol Perfeito</p>
+            </div>
+            <div class="poster-item">
+                <a href="#"><img src="caminho/para/foto2.jpg" alt="Foto 2 - Título" class="poster"></a>
+                <p class="poster-title">Meu Novo Hobby</p>
+            </div>
+            </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 Meu Diário Pessoal. Todos os direitos reservados.</p>
+        <div class="footer-links">
+            <a href="#">Privacidade</a>
+            <a href="#">Termos de Uso</a>
+        </div>
+    </footer>
+</body>
+</html>

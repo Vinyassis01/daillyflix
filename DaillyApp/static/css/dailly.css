@@ -1,0 +1,201 @@
+/* Variáveis de Cores (Estilo Netflix) */
+:root {
+    --primary-color: #e50914; /* Vermelho Netflix */
+    --secondary-color: #141414; /* Fundo Principal */
+    --text-light: #ffffff;
+    --text-gray: #a3a3a3;
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+}
+
+/* Estilo da Barra de Navegação (Navbar) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    background-color: rgba(0, 0, 0, 0.9); /* Fundo sutilmente transparente no topo */
+    position: fixed; /* Fixa no topo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.logo-text {
+    color: var(--primary-color);
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.main-nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.9em;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    opacity: 1;
+    color: var(--text-light); /* Mantém branco, mas o hover dá foco */
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+/* Seção Principal (Feature) */
+.main-feature {
+    background: url('caminho/para/background-feature.jpg') no-repeat center center/cover;
+    height: 90vh; /* Altura da tela */
+    display: flex;
+    align-items: flex-end; /* Conteúdo na parte inferior */
+    padding: 0 60px 80px;
+    position: relative;
+    z-index: 1;
+}
+
+.main-feature::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(20, 20, 20, 0) 0%, rgba(20, 20, 20, 1) 100%); /* Gradiente escuro na parte inferior */
+    z-index: -1;
+}
+
+.feature-content {
+    width: 50%;
+    max-width: 600px;
+}
+
+.feature-title {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.feature-description {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.play-btn, .info-btn {
+    padding: 10px 25px;
+    margin-right: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.play-btn {
+    background-color: var(--text-light);
+    color: var(--secondary-color);
+}
+
+.play-btn:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.info-btn {
+    background-color: rgba(109, 109, 110, 0.7);
+    color: var(--text-light);
+}
+
+.info-btn:hover {
+    background-color: rgba(109, 109, 110, 0.5);
+}
+
+
+/* Fileiras de Conteúdo (Content Rows) */
+.content-row {
+    padding: 40px 60px;
+}
+
+.content-row h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: var(--text-light);
+}
+
+.row-posters {
+    display: flex;
+    overflow-x: scroll; /* Permite a rolagem horizontal */
+    padding-bottom: 20px;
+    gap: 10px;
+    /* Remove a barra de rolagem no estilo Netflix (funciona em navegadores Webkit) */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+}
+
+.row-posters::-webkit-scrollbar {
+    display: none; /* Chrome, Safari e Opera */
+}
+
+.poster-item {
+    min-width: 200px; /* Largura base do poster */
+    position: relative;
+}
+
+.poster {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.poster:hover {
+    transform: scale(1.05);
+    z-index: 5;
+}
+
+.poster-title {
+    font-size: 0.9em;
+    text-align: center;
+    padding-top: 5px;
+    color: var(--text-gray);
+}
+
+
+/* Rodapé */
+.footer {
+    padding: 40px 60px;
+    text-align: center;
+    border-top: 1px solid #282828;
+    color: var(--text-gray);
+}
+
+.footer-links a {
+    color: var(--text-gray);
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
