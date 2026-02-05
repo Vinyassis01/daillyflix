@@ -23,26 +23,35 @@ def client_nome (modeladmin,request,queryset):
 
 class Momentos(models.Model):
     nome = models.CharField(max_length=80,default="momento")
-    # id para pesquisa por nome personalizado pelo usuario
-    id_personalizado = models.CharField(max_length=80,default=nome)
     momento = models.CharField(max_length=3000,default="um momento especial na minha vida")
     # permite um formato personalizado por usuario (02/02/24, fevereiro,02 de 2026, 2026/02/02)
     # sem quebrar a logica
     data = models.CharField(max_length=20,default="02 fev 2024")
 
+    def __str__(self):
+        return self.nome
+
 class Filmes(models.Model):
     nome = models.CharField(max_length=80,default="filme")
-    # id para pesquisa por nome personalizado pelo usuario
-    id_personalizado = models.CharField(max_length=80,default=nome)
-    filme = models.FileField()
+    filme = models.FileField(upload_to="filmes/")
     data = models.CharField(max_length=20,default="02 fev 2024")
 
-class Temporada(Momentos,Filmes):
+    def __str__(self):
+        return self.nome
+
+class Temporada(models.Model):
     nome = models.CharField(max_length=80,default="temporada 1")
-    episodio = models.ForeignKey()
+    episodio_filme = models.ManyToManyField('Filmes',blank=True)
+    episodio_momento = models.ManyToManyField('Momentos',blank=True)
     data = models.CharField(max_length=20,default="02 fev 2024")
 
-class Serie(Temporada):
+    def __str__(self):
+        return self.nome
+
+class Serie(models.Model):
     nome = models.CharField(max_length=80,default="Minha serie")
-    temporada = models.ForeignKey()
+    temporada = models.ManyToManyField('Temporada',blank=False)
     data = models.CharField(max_length=20,default="02 fev 2024")
+
+    def __str__(self):
+        return self.nome
