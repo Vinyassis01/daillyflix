@@ -15,10 +15,6 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -30,7 +26,6 @@ SECRET_KEY = 'django-insecure-sf@&yakq9sf)i_&$v+q8f(uz!q8e__eeil-(f!#ajeiy#4nd_j
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -73,7 +68,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'DaillyFlix.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
@@ -81,15 +75,14 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-# BASE_DIR = Path(__file__).resolve().parent.parent
-
-
     }
 }
-# Configuração de Mídia (Arquivos carregados pelo usuário)
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+# URL que será usada no navegador para acessar os vídeos
+MEDIA_URL = '/media/'
+
+# Caminho absoluto na sua máquina onde os vídeos serão salvos
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators

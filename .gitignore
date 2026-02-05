@@ -1,0 +1,8 @@
+# ambiente virtual
+daillyflix/
+media/
+
+# arquivos de imagens e videos
+*.png
+*.jpeg
+*.mp4
