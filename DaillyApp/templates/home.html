@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Diário Estilo Netflix</title>
+    <link rel="stylesheet" href="{% static '/css/home.css' %}">
+    <script src="{% static '/js/home.js' %}"></script>
+</head>
+<body>
+
+    <header class="outdoor">
+        <div class="outdoor-content">
+            <img src="{% static 'images/1349197.png' %}" width="1000" height="400">
+            <h1>Minhas Memórias</h1>
+            <p>Um registro visual do meu dia a dia.</p>
+        </div>
+    </header>
+
+    <nav class="stories-container">
+        <div class="story"></div>
+        <div class="story"></div>
+        <div class="story"></div>
+        <div class="story"></div>
+        <div class="story"></div>
+        <div class="story"></div>
+        <div class="story"></div>
+    </nav>
+
+    <main class="grid-content">
+        <!-- Gerando 15 itens (3x5) -->
+        <article class="card"></article>
+        <article class="card"></article>
+        <article class="card"></article>
+        <article class="card"></article>
+        <article class="card"></article>
+        <article class="card"></article>
+        <article class="card"></article>
+        <article class="card"></article>
+        <article class="card"></article>
+        <article class="card"></article>
+        <article class="card"></article>
+        <article class="card"></article>
+        <article class="card"></article>
+        <article class="card"></article>
+        <article class="card"></article>
+    </main>
+
+    <section class="notes-section">
+        <div class="note">Nota rápida 1...</div>
+        <div class="note">Nota rápida 2...</div>
+        <div class="note">Nota rápida 3...</div>
+    </section>
+
+    <footer>
+        <p>Siga-me nas redes:</p>
+        <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="#">YouTube</a>
+            <a href="#">GitHub</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
